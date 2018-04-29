@@ -5,14 +5,20 @@ import java.util.LinkedList;
 public class Tablero {
 
 	private Dificultad dificultad;
-	private Combinacion combinacionPropia;
-	private LinkedList<Combinacion>combinaciones = new LinkedList<Combinacion>();
+	private Combinacion combinacionOculta;
+	private LinkedList<Jugada>jugada = new LinkedList<Jugada>();
 	
 	Tablero(Dificultad dificultad){
 		this.dificultad=dificultad;
-		combinacionPropia=0;
+		combinacionOculta=new Combinacion(dificultad);
 	}
 	
+	Combinacion getCombinacionOculta() {
+		return combinacionOculta;
+	}
 	
+	void anhadirJugada(Jugada jugada) {
+		this.jugada.addLast(jugada);
+	}
 	
 }

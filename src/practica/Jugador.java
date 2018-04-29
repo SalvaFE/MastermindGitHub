@@ -2,12 +2,21 @@ package practica;
 
 public abstract class Jugador {
 	
-	Jugador(){
-		
-	}
-
-	abstract void elegirColor();
+	protected Tablero tablero;
+	protected Dificultad dificultad;
 	
-	abstract void elegirPosicion();
+	Jugador(Dificultad dificultad){
+		this.dificultad=dificultad;
+		tablero=new Tablero(dificultad);
+	}
+	
+	abstract Combinacion crearCombinacion();
+	
+	abstract Combinacion crearCombinacionOculta();
+	
+	abstract Respuesta crearRespuesta(Combinacion combinacion);
+	
+	abstract Jugada crearJugada(Combinacion combinacion);
+	
 	
 }

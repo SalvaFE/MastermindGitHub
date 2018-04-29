@@ -8,10 +8,10 @@ public enum Dificultad {
 	private boolean repetirColor;
 	
 	Dificultad(int cantidadCasillas, int cantidadColores, int intentos, boolean repetirColor){
-		cantidadCasillas=this.cantidadCasillas;
-		cantidadColores=this.cantidadColores;
-		intentos=this.intentos;
-		repetirColor=this.repetirColor;
+		this.cantidadCasillas=cantidadCasillas;
+		this.cantidadColores=cantidadColores;
+		this.intentos=intentos;
+		this.repetirColor=repetirColor;
 	}
 	
 	int getCantidadCasillas(){

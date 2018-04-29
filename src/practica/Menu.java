@@ -3,28 +3,30 @@ package practica;
 import practica.Teclado.Intervalos;
 
 public class Menu {
-
-	
-	String crearMenu() {
-		return 	"BIENVENIDO A MASTERMIND\n\n Antes de empezar debe elegir una dificultad.";
-	}
 	
 	Partida elegirDificultad() {
-		int numero;
+		int numeroDif, numeroJug;
 		Partida partida=null;
-		Jugador a, b, c, d, e, f;
-		System.out.println("Escoja la dificultad:\n\t1.-Fácil\n\t2.-Medio\n\t3.-Difícil");
-		numero=Teclado.intervalos(1, 3, Intervalos.AMBOS_INC);
-		
-		switch (numero) {
+		System.out.println("BIENVENIDO A MASTERMIND\n\nAntes de empezar debe elegir una dificultad:\n\t1.-Fácil\n\t2.-Medio\n\t3.-Difícil");
+		numeroDif=Teclado.intervalos(1, 3, Intervalos.AMBOS_INC);
+		switch (numeroDif) {
 		case 1:
-			partida=new Partida(Dificultad.FACIL, a=new Jugador(), b=new Jugador());
+			System.out.println("Escoja quien jugará la partida:\n\t1.-Usuario\n\t2.-Máquina");
+			numeroJug=Teclado.intervalos(1, 2, Intervalos.AMBOS_INC);
+			switch (numeroJug) {
+			case 1:
+				partida=new Partida(Dificultad.FACIL, new Usuario(Dificultad.FACIL), new Maquina(Dificultad.FACIL));
+				break;
+			case 2:
+				partida=new Partida(Dificultad.FACIL, new Maquina(Dificultad.FACIL), new Usuario(Dificultad.FACIL));
+				break;
+			}
 			break;
 		case 2:
-			partida=new Partida(Dificultad.MEDIO, c=new Jugador(), d=new Jugador());
+			partida=new Partida(Dificultad.MEDIO, new Maquina(Dificultad.MEDIO), new Usuario(Dificultad.MEDIO));
 			break;
 		case 3:
-			partida=new Partida(Dificultad.DIFICIL, e=new Jugador(), f=new Jugador());
+			partida=new Partida(Dificultad.DIFICIL, new Maquina(Dificultad.DIFICIL), new Maquina(Dificultad.DIFICIL));
 			break;
 		}
 		return partida;

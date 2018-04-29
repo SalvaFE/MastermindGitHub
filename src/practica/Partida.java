@@ -12,10 +12,8 @@ public class Partida {
 		this.jugador2=jugador2;
 	}
 	
-	empezarPartidaFacil(){
+	void empezarPartida() {
 		
 	}
-	
-	
 	
 }
