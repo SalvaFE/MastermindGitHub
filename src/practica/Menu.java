@@ -4,7 +4,7 @@ import practica.Teclado.Intervalos;
 
 public class Menu {
 	
-	Partida elegirDificultad() {
+	Partida empezarPartida() {
 		int numeroDif, numeroJug;
 		Partida partida=null;
 		System.out.println("BIENVENIDO A MASTERMIND\n\nAntes de empezar debe elegir una dificultad:\n\t1.-Fácil\n\t2.-Medio\n\t3.-Difícil");

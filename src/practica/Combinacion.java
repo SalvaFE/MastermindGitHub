@@ -1,34 +1,71 @@
 package practica;
 
+/** 
+ * Esta clase crea un array de casillas con el constructor de tipo int.
+ * @author Salvador Foncubierta
+ * @version 2.0
+ * @since 1.0
+ */
+
 public class Combinacion implements Dibujable{
 
+	/** 
+	 * Crea un array de casillas de un tamaño que depende de la dificultad.
+	 * Almacena la dificultad de la partida, para darle tamaño al array de casillas.
+	 */
+	
 	private Casilla tamanho[];
 	private Dificultad dificultad;	
 	
-	Combinacion(Dificultad dificultad){ //Al pasar la dificultad por parámetro, determinamos el tamaño de la combinación.s
+	/**
+	 * Construye un nuevo objeto Combinación
+	 * @param dificultad  La dificultad de la partida.
+	 */
+	
+	Combinacion(Dificultad dificultad){
 		this.dificultad=dificultad;
 		tamanho=new Casilla[dificultad.getCantidadCasillas()];
 	}
+	
+	/**
+	 * Devuelve una posición del array de casillas.
+	 * @return La posición especificada.
+	 */
 	
 	Casilla[] getTamanho() {
 		return tamanho;
 	}
 	
+	/**
+	 * Devuelve la dificultad de la partida.
+	 * @return El atributo dificultad.
+	 */
+	
 	Dificultad getDificultad() {
 		return dificultad;
 	}
 	
-	void crearCombinacion(int posicion, int color){ //Este método está en un bucle for, así la posición es la i del bucle y el color es el número que introduce el usuario.
+	/**
+	 * Se rellena el array de casillas con objetos casilla
+	 * @param la posicion del array que se va a rellenar.
+	 * @param el color con el que se va a rellenar.
+	 */
+	
+	void crearCombinacion(int posicion, int color){
 		tamanho[posicion]=new Casilla(color);
 	}
 	
-	public void dibujar() { //Método que imprime la combinación.
+	/**
+	 * Imprime por pantalla el array de casillas y el espacio entre ellas.
+	 */
+	
+	public void dibujar() {
 		int i;
 		for (i = 0; i < tamanho.length; i++) {
-			tamanho[i].dibujar(); //Llama al dibujar de la casilla.
-			System.out.print("  "); //Pone espacios entre casillas.
+			tamanho[i].dibujar();
+			System.out.print("  ");
 		}
-		System.out.print("\t"); //Al dibujar la combinación completa, tabula.
+		System.out.print("\t");
 	}
 	
 }

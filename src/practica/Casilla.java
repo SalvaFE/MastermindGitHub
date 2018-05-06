@@ -1,6 +1,17 @@
 package practica;
 
+/** 
+ * Esta clase almacena el color en un objeto casilla.
+ * @author Salvador Foncubierta
+ * @version 2.0
+ * @since 1.0
+ */
+
 public class Casilla implements Dibujable{
+	
+	/** 
+	 * Almacena el color que es de tipo cadena.
+	 */
 	
 	static final String FONDO_NEGRO = "\u001B[48;5;0m";
 	static final String FONDO_BURDEOS = "\u001B[48;5;1m";
@@ -18,21 +29,47 @@ public class Casilla implements Dibujable{
 	static String[] coloresRespuesta = {"\u001B[48;5;9m", "\u001B[48;5;7m", "\u001B[48;5;0m"};
 	private String color;
 	
+	/**
+	 * Construye un nuevo objeto Casilla para las combinaciones que contiene la posicion específica del array de colores de tipo int.
+	 * @param posicion  El número que corresponde a la posición del array de colores.
+	 */
+	
 	Casilla(int posicion){ //Constructor para las casillas de la clase combinación
 		color=colores[posicion];
 	}
+	
+	/**
+	 * Construye un nuevo objeto Casilla para las respuestas que contiene la posicion específica del array de colores de tipo byte.
+	 * @param posicionRespuesta  El número que corresponde a la posición del array de colores.
+	 */
 	
 	Casilla(byte posicionRespuesta){ //Constructor para las casillas de la clase respuesta.
 		color=coloresRespuesta[posicionRespuesta];
 	}
 	
+	/**
+	 * Devuelve el color de la casilla.
+	 * @return El atributo color.
+	 */
+	
 	String getColor() {
 		return color;
 	}
 	
-	public void dibujar() { //Método que imprime la casilla.
+	/**
+	 * Imprime por pantalla la casilla.
+	 */
+	
+	public void dibujar() {
 		System.out.printf("%s  %s", color, Casilla.RESET);
 	}
+	
+	/**
+	 * Compara objetos casilla.
+	 * @param obj	El objeto a comparar. Puede ser <code>null</code>
+	 * @return 		true: si son iguales. 
+	 * 				false: si son diferentes. 
+	 */
 	
 	public boolean equals(Object obj) {
 		boolean resultado=false;
