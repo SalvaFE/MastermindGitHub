@@ -47,7 +47,7 @@ public class Tablero {
 	
 	void dibujarCompleto() {
 		int i;
-		for (i = 1; i < jugada.size(); i++) {
+		for (i = 0; i < jugada.size(); i++) {
 			System.out.printf("Intento nº %d:\t",i+1);
 			jugada.get(i).dibujar();
 			System.out.println();

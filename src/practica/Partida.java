@@ -28,13 +28,13 @@ public class Partida {
 				jugador1.getTablero().anhadirJugada(jugador2.crearRespuesta(jugador1.crearCombinacion()));
 				if (comprobarGanador(jugador1)==1) {
 					System.out.println("Has ganado.");
-					jugador1.getTablero().dibujar();
+					jugador1.getTablero().dibujarCompleto();
 					salir=true;
 				}else {
-					jugador1.getTablero().dibujarCompleto();
+					jugador1.getTablero().dibujar();
 					i++;
 				}
-			} while (i<dificultad.getIntentos() || salir);
+			} while (i<dificultad.getIntentos() && !salir);
 			if (comprobarGanador(jugador1)==0) {
 				System.out.println("Has perdido.");
 			} 
